@@ -10,7 +10,7 @@ Cara ini tidak 100% bisa dipercaya karena belum ada penelitian lebih lanjut dan 
 Tujuannya adalah untuk menutup akses internet yang diberikan kepada software bajakan agar tidak bisa dikontrol dari jarak jauh
 
 1. Buatlah file text
-2. Isikan dengan kode berikut
+2. Isikan dengan kode berikut (tanpa petik 2)
 "
 @ setlocal enableextensions 
 @ cd /d "%~dp0"
