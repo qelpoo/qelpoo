@@ -1,0 +1,31 @@
+Sedikit informasi mengenai mengenai installasi software crack untuk meminimalisir malware yang ada didalam pc local saat memakai software crack.
+
+Pemikiran saya saat orang orang menjadi korban dari ransomeware, kemungkinan adalah disebabkan dari installasi software crack.
+Banyak kasus terkena ransomeware saat installasi atau saat setelah memakai software bajakan. 
+Tidak menutup kemungkinan mereka yang membuat software bajakan ini mengendalikan device kamu dari jarak jauh atau di remote oleh pembuat softwarenya.
+Untuk meminimalisir hal ini, pemikiran saya adalah langsung tertuju bahwa akses internet diberikan sepenuhnya sehingga aplikasi mudah untuk di kontrol.
+
+Cara ini tidak 100% bisa dipercaya karena belum ada penelitian lebih lanjut dan hanya memblock software untuk mengakses internet.
+
+Tujuannya adalah untuk menutup akses internet yang diberikan kepada software bajakan agar tidak bisa dikontrol dari jarak jauh
+
+1. Buatlah file text
+2. Isikan dengan kode berikut
+"
+@ setlocal enableextensions 
+@ cd /d "%~dp0"
+
+for /R %%f in (*.exe) do (
+  netsh advfirewall firewall add rule name="Blocked: %%f" dir=in program="%%f" action=block
+  netsh advfirewall firewall add rule name="Blocked: %%f" dir=out program="%%f" action=block
+)
+pause
+"
+3. Gantilah ekstensi file text setelah dipaste kode diatas menjadi .cmd
+4. Copy dan paste kedalam folder crack (setelah installasi)
+
+NB: 
+*Sebisa mungkin setelah installasi (jangan dirun terlebih dahulu) langsung paste file diatas.
+*Saat run file diatas, dibutuhkan akses admin jadi harus klik kanan > run as administrator.
+*Untuk pengecekan lebih lanjut, bisa langsung ke virustotal.com untuk pengecekan file .exe berbau malware
+*Script ini hanya berlaku untuk file .exe saja
