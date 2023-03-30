@@ -1,0 +1,36 @@
+gonna note here
+
+################
+# aria2c usage #
+################
+use aria2c to download with multiple protocols (such as HTTP(s), SFTP, FTP, BitTorent, Metalink)
+example command:
+### i usually use flag `-x` to speed up download bitrate and the maximum is 16 session ###
+aria2c -x 5 --ftp-user=abc@example.com --ftp-passwd=gotchu ftp://example/backup.tar.gz <-- by ftp
+aria2c -x 5 -i uris.txt <-- by url list
+aria2c -x 3 http://example.com/pma.torent <-- download torent
+
+
+note: 
+	whenever the server had open port http/https and domain for ftp isn't live (it's mean domain die/expired)
+		you can use username as directory (example: http://example.com/~username/filehere.tar.gz or ftp://example.com/~username/filehere.tar.gz)
+	can continue download when download progress is failed by connection problem or user interupt (use `-o` flag, example aria2c https://example.com/example.tar.gz -o example.tar.gz)
+
+
+##############
+# axel usage #
+##############
+use axel to speed up download rate (better than aria2c for HTTP(s) method)
+flag i used to:
+	`-a` to show progress
+	`-v` to see detail message (verbose)
+	`-N` mean don't use any proxy to download the file
+	`-k` to skip ssl verification (if needed)
+	`-n` to multiply connection/session
+	`-o` to resume file whenever the file wasn't completely downloaded (use it as same as previously on-progress file)
+example command:
+axel -avNk -n 10 https://example.com/~user1/user1.backup.tar.gz
+axel -avN -n 5 http://example.com/file1.tar.gz
+
+
+will update tommorow :)
