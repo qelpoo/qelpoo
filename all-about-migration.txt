@@ -33,4 +33,18 @@ axel -avNk -n 10 https://example.com/~user1/user1.backup.tar.gz
 axel -avN -n 5 http://example.com/file1.tar.gz
 
 
-will update tommorow :)
+###############
+# rsync usage #
+###############
+use rsync to boost your migrate (internal migration recomended)
+flag i used to: 
+	`-a` equal to -rlptgoD (no -H,-A,-X) // preserve time, owner, permissions, and group
+	`-v --verbose` to showing information about rsync
+	`-e` to custom port ssh or login by ssh key (by default port ssh 22)
+	`--exclude='PATTERN' --exclude-from=FILE1` to exclude pattern or file you won't move to
+	`-P` to show progress
+	`-h` output numbers in a human-readable format
+	`-z` to compress file data during data transfer to destination
+example command:
+rsync -avzh -e 'ssh -p 2022' /home/localmachine/filesource.tar.gz root@example.com:/home/exaple/public_html/
+rsync -arP --exclude='.well-known' /home/example.com/public_html/ /home/subdomain.example.com/public_html/ <-- used this to migrate internal from folder a to b faster
