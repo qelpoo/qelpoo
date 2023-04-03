@@ -64,5 +64,5 @@ username_b = example.id
 	- In the tab ``Account Creation Limits`` >> Replicate package/feature from username 'a' to username 'b' >> In the username 'b', please make it sure it's same as username a then click "Save All Settings"
 	- After all goods, then go to Resellers >> Change Ownership of Multiple Accounts (alternatively you can paste in searchbox WHM) >> search username 'b' (new reseller account with username) >> Click checkbox which from username 'a' >> all good
 	- Check new username if there has example.com and example.id and DO NOT DELETE ANYTHING FROM OLD USERNAME
-
+	- then at VP Sup >> New tab client account >> Prod Serv >> manage order >> Manage >> Get Info >> paste new username to there
 ty :)
