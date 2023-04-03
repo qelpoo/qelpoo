@@ -48,3 +48,21 @@ flag i used to:
 example command:
 rsync -avzh -e 'ssh -p 2022' /home/localmachine/filesource.tar.gz root@example.com:/home/exaple/public_html/
 rsync -arP --exclude='.well-known' /home/example.com/public_html/ /home/subdomain.example.com/public_html/ <-- used this to migrate internal from folder a to b faster
+
+
+
+################################################################
+# in case we needs to change ownership cpanel reseller account #
+################################################################
+sample case ticket id: HOH-179-71761 in VP
+username_a = example.com
+username_b = example.id
+	How it works
+	Here:
+	- Login to WHM Root >> Reseller Center >> Edit Reseller Nameservers and Privileges
+	- Check username in ``reseller action for`` with domain ''example.com'' (equals to 'a') >> Find those username >> Edit Reseller Nameservers and Privileges (DO NOT EDIT ANYTHING)
+	- In the tab ``Account Creation Limits`` >> Replicate package/feature from username 'a' to username 'b' >> In the username 'b', please make it sure it's same as username a then click "Save All Settings"
+	- After all goods, then go to Resellers >> Change Ownership of Multiple Accounts (alternatively you can paste in searchbox WHM) >> search username 'b' (new reseller account with username) >> Click checkbox which from username 'a' >> all good
+	- Check new username if there has example.com and example.id and DO NOT DELETE ANYTHING FROM OLD USERNAME
+
+ty :)
